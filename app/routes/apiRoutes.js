@@ -31,8 +31,7 @@ module.exports = (app) => {
     var userAnswers = userData.scores;
 
 
-    friends.push(userData);
-    res.json({status: 'OK', matchName: matchName, matchPhoto: matchPhoto});
+    
 
     //setting initial conditions so that we can get smallest difference and make 
     //that the match later on
@@ -69,5 +68,8 @@ module.exports = (app) => {
 
   //  res.json({status: 'OK', matchName: matchName, matchPhoto: matchPhoto});
 
+
+  friends.push(userData);
+    res.json({status: 'OK', matchName: matchName, matchPhoto: matchPhoto});
   });
 };
