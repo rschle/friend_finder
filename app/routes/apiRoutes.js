@@ -30,19 +30,23 @@ module.exports = (app) => {
     var userData = req.body;
     var userAnswers = userData.scores;
 
+
+    friends.push(userData);
+    res.json({status: 'OK', matchName: matchName, matchPhoto: matchPhoto});
+
     //setting initial conditions so that we can get smallest difference and make 
     //that the match later on
     var mainDiff = 1000000;
     var matchName = "";
     var matchPhoto = "";
-    //parsing out the scores from the new user's answers so that they are inegers
+    //parsing out the scores from the new user's answers so that they are integers
     // var userAnsInt = [];
     // for (var i = 0; i < userAnswers.length; i++) {
     //   userAnsInt.push(parseInt(userAnswers[i]));
     // }
 
-    friends.push(userData);
-    res.json(true);
+    
+    // res.json(true);
     // console.log(userAnswers);
     // console.log(userAnsInt);
 
@@ -63,13 +67,7 @@ module.exports = (app) => {
     console.log(matchName);
     console.log(matchPhoto);
 
+  //  res.json({status: 'OK', matchName: matchName, matchPhoto: matchPhoto});
+
   });
-
-
-  // app.post("/api/clear", (req, res) => {
-  //   // Empty out the arrays of data
-  //   friends.length = 0;
-  //   res.json({ ok: true });
-
-  // });
 };
